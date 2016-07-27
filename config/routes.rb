@@ -3,6 +3,7 @@ Rails.application.routes.draw do
    root 'users#index'
 
    resources :soft_skills
+   resources :hard_skills
 
   get 'users/new'
 

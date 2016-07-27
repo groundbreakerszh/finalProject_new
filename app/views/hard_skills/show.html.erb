@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Linkedin:</strong>
+  <%= @hard_skill.linkedin %>
+</p>
+
+<p>
+  <strong>Social_media_profile:</strong>
+  <%= @hard_skill.social_media_profile %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @hard_skill.website %>
+</p>
+
+<p>
+  <strong>Travelamount:</strong>
+  <%= @hard_skill.travelamount %>
+</p>
+
+<%= link_to 'Edit', edit_hard_skill_path(@hard_skill) %> |
+<%= link_to 'Back', hard_skills_path %>

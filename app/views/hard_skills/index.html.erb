@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Hard Skills</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Linkedin</th>
+      <th>Social_media_profile</th>
+      <th>Website</th>
+      <th>Travelamount</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hard_skills.each do |hard_skill| %>
+      <tr>
+        <td><%= hard_skill.linkedin %></td>
+        <td><%= hard_skill.social_media_profile %></td>
+        <td><%= hard_skill.website %></td>
+        <td><%= hard_skill.travelamount %></td>
+        <td><%= link_to 'Show', hard_skill %></td>
+        <td><%= link_to 'Edit', edit_hard_skill_path(hard_skill) %></td>
+        <td><%= link_to 'Destroy', hard_skill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Hard Skill', new_hard_skill_path %>

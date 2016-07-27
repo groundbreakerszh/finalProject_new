@@ -1,0 +1,2 @@
+class HardSkill < ApplicationRecord
+end
