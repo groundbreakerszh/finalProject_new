@@ -27,6 +27,14 @@
 
 <!-- Indicates a successful or positive action -->
 <button type="button" class="btn btn-success">Success</button>
+
+<% if user_signed_in? %>
+  <%= current_user.email %>
+  <br>
+  <%= link_to 'log out', destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to 'log in', new_user_session_path %>
+<% end %>
     <%= yield %>
   </body>
 </html>
