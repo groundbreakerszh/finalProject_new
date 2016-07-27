@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Soft Skills</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Career</th>
+      <th>Importance</th>
+      <th>Impact</th>
+      <th>Super power</th>
+      <th>Help</th>
+      <th>Like</th>
+      <th>Dislike</th>
+      <th>Greatest achievement</th>
+      <th>Best friend</th>
+      <th>Greatest regret</th>
+      <th>Motto</th>
+      <th>Links to share</th>
+      <th>More about</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @soft_skills.each do |soft_skill| %>
+      <tr>
+        <td><%= soft_skill.career %></td>
+        <td><%= soft_skill.importance %></td>
+        <td><%= soft_skill.impact %></td>
+        <td><%= soft_skill.super_power %></td>
+        <td><%= soft_skill.help %></td>
+        <td><%= soft_skill.like %></td>
+        <td><%= soft_skill.dislike %></td>
+        <td><%= soft_skill.greatest_achievement %></td>
+        <td><%= soft_skill.best_friend %></td>
+        <td><%= soft_skill.greatest_regret %></td>
+        <td><%= soft_skill.motto %></td>
+        <td><%= soft_skill.links_to_share %></td>
+        <td><%= soft_skill.more_about %></td>
+        <td><%= link_to 'Show', soft_skill %></td>
+        <td><%= link_to 'Edit', edit_soft_skill_path(soft_skill) %></td>
+        <td><%= link_to 'Destroy', soft_skill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Soft Skill', new_soft_skill_path %>

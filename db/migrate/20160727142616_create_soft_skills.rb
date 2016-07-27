@@ -8,13 +8,13 @@ class CreateSoftSkills < ActiveRecord::Migration[5.0]
       t.string :help
       t.string :like
       t.string :dislike
-      t.string :greatest_achievment
+      t.string :greatest_achievement
       t.string :best_friend
       t.string :greatest_regret
       t.string :motto
       t.string :links_to_share
       t.string :more_about
-      
+
       t.references :user
 
       t.timestamps

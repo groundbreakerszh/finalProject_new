@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'registrations' }
    root 'users#index'
 
+   resources :soft_skills
+
   get 'users/new'
 
   get 'sessions/new'

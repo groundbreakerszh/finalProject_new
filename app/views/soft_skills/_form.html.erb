@@ -1,0 +1,82 @@
+<%= form_for(soft_skill) do |f| %>
+  <% if soft_skill.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(soft_skill.errors.count, "error") %> prohibited this soft_skill from being saved:</h2>
+
+      <ul>
+      <% soft_skill.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :career %>
+    <%= f.text_field :career %>
+  </div>
+
+  <div class="field">
+    <%= f.label :importance %>
+    <%= f.text_field :importance %>
+  </div>
+
+  <div class="field">
+    <%= f.label :impact %>
+    <%= f.text_field :impact %>
+  </div>
+
+  <div class="field">
+    <%= f.label :super_power %>
+    <%= f.text_field :super_power %>
+  </div>
+
+  <div class="field">
+    <%= f.label :help %>
+    <%= f.text_field :help %>
+  </div>
+
+  <div class="field">
+    <%= f.label :like %>
+    <%= f.text_field :like %>
+  </div>
+
+  <div class="field">
+    <%= f.label :dislike %>
+    <%= f.text_field :dislike %>
+  </div>
+
+  <div class="field">
+    <%= f.label :greatest_achievement %>
+    <%= f.text_field :greatest_achievement %>
+  </div>
+
+  <div class="field">
+    <%= f.label :best_friend %>
+    <%= f.text_field :best_friend %>
+  </div>
+
+  <div class="field">
+    <%= f.label :greatest_regret %>
+    <%= f.text_field :greatest_regret %>
+  </div>
+
+  <div class="field">
+    <%= f.label :motto %>
+    <%= f.text_field :motto %>
+  </div>
+
+  <div class="field">
+    <%= f.label :links_to_share %>
+    <%= f.text_field :links_to_share %>
+  </div>
+
+  <div class="field">
+    <%= f.label :more_about %>
+    <%= f.text_field :more_about %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

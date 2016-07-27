@@ -1,0 +1,1 @@
+json.partial! "soft_skills/soft_skill", soft_skill: @soft_skill

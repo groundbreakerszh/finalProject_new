@@ -23,15 +23,15 @@ ActiveRecord::Schema.define(version: 20160727142616) do
     t.string   "help"
     t.string   "like"
     t.string   "dislike"
-    t.string   "greatest_achievment"
+    t.string   "greatest_achievement"
     t.string   "best_friend"
     t.string   "greatest_regret"
     t.string   "motto"
     t.string   "links_to_share"
     t.string   "more_about"
     t.integer  "user_id"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
     t.index ["user_id"], name: "index_soft_skills_on_user_id", using: :btree
   end
 

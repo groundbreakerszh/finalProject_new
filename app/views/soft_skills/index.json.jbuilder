@@ -1,0 +1,1 @@
+json.array! @soft_skills, partial: 'soft_skills/soft_skill', as: :soft_skill
