@@ -1,0 +1,22 @@
+<%= form_for(cities_to_work) do |f| %>
+  <% if cities_to_work.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cities_to_work.errors.count, "error") %> prohibited this cities_to_work from being saved:</h2>
+
+      <ul>
+      <% cities_to_work.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :cities_to_works %>
+    <%= f.text_field :cities_to_works %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,1 @@
+json.array! @cities_to_works, partial: 'cities_to_works/cities_to_work', as: :cities_to_work

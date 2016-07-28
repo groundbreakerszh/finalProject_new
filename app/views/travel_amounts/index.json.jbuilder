@@ -1,0 +1,1 @@
+json.array! @travel_amounts, partial: 'travel_amounts/travel_amount', as: :travel_amount

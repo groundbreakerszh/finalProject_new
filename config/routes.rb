@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
    resources :soft_skills
    resources :hard_skills
+   resources :cities_to_works
+   resources :travel_amounts
 
   get 'users/new'
 

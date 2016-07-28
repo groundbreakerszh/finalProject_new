@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Travel Amounts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Travelamount</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @travel_amounts.each do |travel_amount| %>
+      <tr>
+        <td><%= travel_amount.travelamount %></td>
+        <td><%= link_to 'Show', travel_amount %></td>
+        <td><%= link_to 'Edit', edit_travel_amount_path(travel_amount) %></td>
+        <td><%= link_to 'Destroy', travel_amount, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Travel Amount', new_travel_amount_path %>

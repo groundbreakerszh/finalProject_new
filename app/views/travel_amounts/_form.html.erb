@@ -1,0 +1,22 @@
+<%= form_for(travel_amount) do |f| %>
+  <% if travel_amount.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(travel_amount.errors.count, "error") %> prohibited this travel_amount from being saved:</h2>
+
+      <ul>
+      <% travel_amount.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :travel_amounts %>
+    <%= f.text_field :travel_amounts %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

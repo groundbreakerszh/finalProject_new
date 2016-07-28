@@ -1,0 +1,1 @@
+json.partial! "travel_amounts/travel_amount", travel_amount: @travel_amount
