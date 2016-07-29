@@ -1,6 +1,27 @@
+.background_image {
+  position: relative;
+  background-image: url("chicago.jpg");
+  background-position: bottom;
+  background-size: cover;
+  height: 700px;
+  width: 100%;
+}
 
-body {
-  background-image: url("../images/chicago.jpg");
-  background-color: #cccccc;
-  width:200px, height:200px;
+.background_image__title {
+  font-family: "Raleway", Raleway;
+  margin-top: -1 * $navbar-margin-bottom;
+  padding-top: 50px;
+  font-size: 15rem;
+  font-weight: bold;
+  text-align: center;
+  color: #000000;
+}
+
+.background_image__subtitle {
+  font-family: "Raleway", Raleway;
+  padding-top: 300px;
+  font-weight: bold;
+  font-size: 5rem;
+  text-align: center;
+  color: #ffffff;
 }
