@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'registrations' }
-  
 
-   resources :soft_skills
-   resources :hard_skills
+    resources :users do
+      resources :soft_skills 
+      resources :hard_skills
+    end
+
    resources :cities_to_works
    resources :travel_amounts
 

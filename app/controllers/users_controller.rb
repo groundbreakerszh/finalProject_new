@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @hs = HardSkill.all
   end
 
   def new
