@@ -14,7 +14,8 @@ class SoftSkillsController < ApplicationController
 
   # GET /soft_skills/new
   def new
-    @soft_skill = SoftSkill.new
+      @user = User.find_by(id: params[:user_id])
+      @soft_skill = SoftSkill.new
   end
 
   # GET /soft_skills/1/edit
@@ -24,15 +25,14 @@ class SoftSkillsController < ApplicationController
   # POST /soft_skills
   # POST /soft_skills.json
   def create
-    @soft_skill = SoftSkill.new(soft_skill_params)
+    @user = User.find_by(id: params[:user_id])
+    @soft_skill = @user.soft_skills.new(soft_skill_params)
 
     respond_to do |format|
       if @soft_skill.save
-        format.html { redirect_to @soft_skill, notice: 'Soft skill was successfully created.' }
-        format.json { render :show, status: :created, location: @soft_skill }
+        format.html { redirect_to user_path(@user), notice: 'Soft skill was successfully created.' }
       else
         format.html { render :new }
-        format.json { render json: @soft_skill.errors, status: :unprocessable_entity }
       end
     end
   end

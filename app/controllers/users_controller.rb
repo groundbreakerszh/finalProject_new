@@ -4,7 +4,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @hs = HardSkill.all
+    @hard_skills = HardSkill.all
+    @soft_skills = SoftSkill.all
   end
 
   def new

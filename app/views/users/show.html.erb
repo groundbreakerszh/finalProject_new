@@ -1,7 +1,22 @@
-<% @hs.each do |hard_skill| %>
+<% @hard_skills.each do |hard_skill| %>
 <%= hard_skill.linkedin %>
 <%= hard_skill.social_media_profile %>
 <%= hard_skill.website %>
 <%= hard_skill.travelamount %>
+<% end %>
 
+<% @soft_skills.each do |soft_skill| %>
+<%= soft_skill.career %>
+<%= soft_skill.importance %>
+<%= soft_skill.impact %>
+<%= soft_skill.super_power %>
+<%= soft_skill.help %>
+<%= soft_skill.like %>
+<%= soft_skill.dislike %>
+<%= soft_skill.greatest_achievement %>
+<%= soft_skill.best_friend %>
+<%= soft_skill.greatest_regret %>
+<%= soft_skill.motto %>
+<%= soft_skill.links_to_share %>
+<%= soft_skill.more_about %>
 <% end %>
