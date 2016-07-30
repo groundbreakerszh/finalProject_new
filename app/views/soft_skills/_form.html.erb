@@ -1,4 +1,4 @@
-<%= form_for [@user, @soft_skill] do |f| %>
+<%= form_for  [@user, @soft_skill], html: {multipart: true } do |f| %>
   <% if soft_skill.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(soft_skill.errors.count, "error") %> prohibited this soft_skill from being saved:</h2>
@@ -10,6 +10,11 @@
       </ul>
     </div>
   <% end %>
+
+  <div class="field">
+    <%= f.label :image, 'Share a picture of something that inspires you...' %>
+    <%= f.file_field :image %>
+  </div>
 
   <div class="field">
     <%= f.label :career, 'Do you have already a clear vision of your future career?' %>

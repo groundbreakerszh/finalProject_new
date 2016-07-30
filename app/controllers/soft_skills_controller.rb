@@ -70,6 +70,6 @@ class SoftSkillsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def soft_skill_params
-      params.require(:soft_skill).permit(:career, :importance, :impact, :super_power, :help, :like, :dislike, :greatest_achievement, :best_friend, :greatest_regret, :motto, :links_to_share, :more_about)
+      params.require(:soft_skill).permit(:career, :importance, :impact, :super_power, :help, :like, :dislike, :greatest_achievement, :best_friend, :greatest_regret, :motto, :links_to_share, :more_about, :image)
     end
 end
