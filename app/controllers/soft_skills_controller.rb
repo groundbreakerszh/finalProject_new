@@ -27,6 +27,7 @@ class SoftSkillsController < ApplicationController
   def create
     @user = User.find_by(id: params[:user_id])
     @soft_skill = @user.soft_skills.new(soft_skill_params)
+    @soft_skill.user_id = current_user.id
 
     respond_to do |format|
       if @soft_skill.save

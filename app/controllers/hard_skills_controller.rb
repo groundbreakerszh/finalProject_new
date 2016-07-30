@@ -27,6 +27,7 @@ class HardSkillsController < ApplicationController
   def create
     @user = User.find_by(id: params[:user_id])
     @hard_skill = @user.hard_skills.new(hard_skill_params)
+    @hard_skill.user_id = current_user.id
 
 
     respond_to do |format|

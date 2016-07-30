@@ -8,4 +8,11 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :year_of_birth])
   end
 
+protected
+
+   def authenticate_user!
+     if current_user
+       redirect_to :hard_skills
+     end
+   end
 end
