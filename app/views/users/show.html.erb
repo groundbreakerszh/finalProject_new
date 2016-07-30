@@ -2,6 +2,7 @@
 
 
 <% @hard_skills.each do |hard_skill| %>
+<%= image_tag hard_skill.image.url(:large) %>
 <p>Show me your Linkedin profile...<%= hard_skill.linkedin %></p>
 <p>Please show me your favorite social media profile of yourself...<%= hard_skill.social_media_profile %></p>
 <p>Show me your Website/ Portfolio...<%= hard_skill.website %></p>

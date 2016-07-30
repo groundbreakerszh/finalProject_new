@@ -69,6 +69,6 @@ class HardSkillsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hard_skill_params
-      params.require(:hard_skill).permit(:linkedin, :socialmediaprofile, :website, :travelamount)
+      params.require(:hard_skill).permit(:linkedin, :socialmediaprofile, :website, :travelamount, :image)
     end
 end

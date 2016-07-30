@@ -18,6 +18,7 @@ gem 'bootstrap-sass', '~> 3.3.7'
 gem 'sprockets', '~> 3.0'
 gem 'autoprefixer-rails'
 gem 'devise'
+gem 'paperclip', '~> 5.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
