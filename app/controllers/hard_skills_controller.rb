@@ -25,17 +25,16 @@ class HardSkillsController < ApplicationController
   # POST /hard_skills
   # POST /hard_skills.json
   def create
-    @user = User.find_by(id: params[:user_id])
-    @hard_skill = @user.hard_skills.new(hard_skill_params)
-    @hard_skill.user_id = current_user.id
+    def create
+      @user = User.find_by(id: params[:user_id])
+      @user.create_hard_skill(hard_skill_params)
 
-
-    respond_to do |format|
-      if @hard_skill.save
-        format.html { redirect_to user_path(@user), notice: 'Hard skill was successfully created.' }
+      respond_to do |format|
+        if @user.save
+          format.html { redirect_to user_path(@user), notice: 'Hard skill was successfully created.' }
+        end
       end
     end
-  end
 
   # PATCH/PUT /hard_skills/1
   # PATCH/PUT /hard_skills/1.json
