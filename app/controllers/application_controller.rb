@@ -9,10 +9,7 @@ class ApplicationController < ActionController::Base
   end
 
 protected
-
    def authenticate_user!
-     if current_user
-       redirect_to :hard_skills
-     end
+
    end
 end

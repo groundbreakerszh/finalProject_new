@@ -12,17 +12,24 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="/"><span>Home</span></a></li>
+
+        <% if user_signed_in? %>
+        <li><a href="/profile"><span>Profile</span></a></li>
+        <% end %>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li>
-            <% if user_signed_in? %>
-              <%= current_user.email %>
-              <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
-            <% else %>
-              <%= link_to 'Sign In', new_user_session_path %>
+          <% if user_signed_in? %>
+          <li>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <span><%= 'Hello ' + current_user.name + ', ' %></span>
+              <span>Sign Out</span>
             <% end %>
-        </li>
+          </li>
+          <% else %>
+            <li><%= link_to 'Sign In', new_user_session_path %></li>
+            <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+          <% end %>
       </ul>
     </div>
   </div>

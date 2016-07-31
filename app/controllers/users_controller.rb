@@ -1,19 +1,15 @@
 class UsersController < ApplicationController
   def current_user_home
-  redirect_to current_user
-end
+   redirect_to current_user
+  end
   def index
     @users = User.all
+    @currentUser = current_user.id
   end
 
-
-
-
   def show
-
     @hard_skills = HardSkill.where(user_id: current_user.id )
     @soft_skills = SoftSkill.where(user_id: current_user.id )
-  
   end
 
   def new

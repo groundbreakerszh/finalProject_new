@@ -3,7 +3,25 @@
     <h3 class="background_image__subtitle">A social collective for <br>Entrepreneurs</h3>
 </div>
 
+<div class="container">
+  <div class="row intro_box">
+    <h1>share | find | create | meet <h1>
+  </div>
 
-<div class="intro_box">
-  <h1>share | find | create | meet <h1>
+  <div class="row">
+    <% @users.each do |user| %>
+      <div class="col-md-4">
+        <%= link_to controller: "site", action: "member", id: user.id do %>
+        <div class="panel panel-default">
+          <div class="panel-body text-center">
+            <img class="img-circle image_profile" src="https://static.securityintelligence.com/uploads/2014/04/201401Our-Dev-Team-hates-the-Software-Security-Testing-Team.jpg">
+          </div>
+          <div class="panel-footer text-center">
+            <h3><%= user.name %></h3>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>
