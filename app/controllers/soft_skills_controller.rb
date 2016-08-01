@@ -10,6 +10,8 @@ class SoftSkillsController < ApplicationController
   # GET /soft_skills/1
   # GET /soft_skills/1.json
   def show
+    @user = User.find_by(id: params[:user_id])
+    @soft_skills = SoftSkill.find_by(id: params[:id])
   end
 
   # GET /soft_skills/new
@@ -20,17 +22,18 @@ class SoftSkillsController < ApplicationController
 
   # GET /soft_skills/1/edit
   def edit
+    @user = User.find_by(id: params[:user_id])
+    @soft_skill = @user.soft_skill
   end
 
   # POST /soft_skills
   # POST /soft_skills.json
   def create
     @user = User.find_by(id: params[:user_id])
-    @soft_skill = @user.soft_skills.new(soft_skill_params)
-    @soft_skill.user_id = current_user.id
+    @user.create_soft_skill(soft_skill_params)
 
     respond_to do |format|
-      if @soft_skill.save
+      if @user.save
         format.html { redirect_to user_path(@user), notice: 'Soft skill was successfully created.' }
       else
         format.html { render :new }
@@ -43,7 +46,7 @@ class SoftSkillsController < ApplicationController
   def update
     respond_to do |format|
       if @soft_skill.update(soft_skill_params)
-        format.html { redirect_to @soft_skill, notice: 'Soft skill was successfully updated.' }
+        format.html { redirect_to profile_path, notice: 'Soft skill was successfully updated.' }
         format.json { render :show, status: :ok, location: @soft_skill }
       else
         format.html { render :edit }

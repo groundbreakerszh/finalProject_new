@@ -1,5 +1,5 @@
-<%= form_for  [@user, @hard_skill], html: {multipart: true } do |f| %>
-  <% if hard_skill.errors.any? %>
+<%= form_for  [@user, @user.hard_skill], html: {multipart: true } do |f| %>
+  <% if @user.hard_skill.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(hard_skill.errors.count, "error") %> prohibited this hard_skill from being saved:</h2>
 

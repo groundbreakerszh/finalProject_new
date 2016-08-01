@@ -38,14 +38,10 @@
         <td><%= soft_skill.motto %></td>
         <td><%= soft_skill.links_to_share %></td>
         <td><%= soft_skill.more_about %></td>
-        <td><%= link_to 'Show', soft_skill %></td>
-        <td><%= link_to 'Edit', edit_soft_skill_path(soft_skill) %></td>
-        <td><%= link_to 'Destroy', soft_skill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', user_soft_skill_path(soft_skill.user_id, soft_skill.id) %></td>
+        <td><%= link_to 'Edit', edit_user_soft_skill_path(soft_skill.user_id, soft_skill.id) %></td>
+        <td><%= link_to 'Destroy', user_soft_skill_path(soft_skill.user_id, soft_skill.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Soft Skill', new_soft_skill_path %>

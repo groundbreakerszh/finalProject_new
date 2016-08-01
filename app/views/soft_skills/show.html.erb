@@ -1,69 +1,69 @@
-<p id="notice"><%= notice %></p>
+<h1>Soft Skills</h1>
 
-<p>
-  <strong>Career:</strong>
-  <%= @soft_skill.career %>
-</p>
-
-<p>
-  <strong>Importance:</strong>
-  <%= @soft_skill.importance %>
-</p>
-
-<p>
-  <strong>Impact:</strong>
-  <%= @soft_skill.impact %>
-</p>
-
-<p>
-  <strong>Super power:</strong>
-  <%= @soft_skill.super_power %>
-</p>
-
-<p>
-  <strong>Help:</strong>
-  <%= @soft_skill.help %>
-</p>
-
-<p>
-  <strong>Like:</strong>
-  <%= @soft_skill.like %>
-</p>
-
-<p>
-  <strong>Dislike:</strong>
-  <%= @soft_skill.dislike %>
-</p>
-
-<p>
-  <strong>Greatest achievement:</strong>
-  <%= @soft_skill.greatest_achievement %>
-</p>
-
-<p>
-  <strong>Best friend:</strong>
-  <%= @soft_skill.best_friend %>
-</p>
-
-<p>
-  <strong>Greatest regret:</strong>
-  <%= @soft_skill.greatest_regret %>
-</p>
-
-<p>
-  <strong>Motto:</strong>
-  <%= @soft_skill.motto %>
-</p>
-
-<p>
-  <strong>Links to share:</strong>
-  <%= @soft_skill.links_to_share %>
-</p>
-
-<p>
-  <strong>More about:</strong>
-  <%= @soft_skill.more_about %>
-</p>
-
-<%= link_to 'Edit', edit_soft_skill_path(@soft_skill) %> |
-<%= link_to 'Back', soft_skills_path %>
+<% if @user.soft_skill %>
+<table class="table table-hover">
+  <tbody>
+    <tr>
+      <th>Career:</th>
+      <td><%= @user.soft_skill.career %></td>
+    </tr>
+    <tr>
+      <th>Importance:</th>
+      <td><%= @user.soft_skill.importance %></td>
+    </tr>
+    <tr>
+      <th>Impact:</th>
+      <td><%= @user.soft_skill.impact %></td>
+    </tr>
+    <tr>
+      <th>Super power:</th>
+      <td><%= @user.soft_skill.super_power %></td>
+    </tr>
+    <tr>
+      <th>Help:</th>
+      <td><%= @user.soft_skill.help %></td>
+    </tr>
+    <tr>
+      <th>Like:</th>
+      <td><%= @user.soft_skill.like %></td>
+    </tr>
+    <tr>
+      <th>Dislike:</th>
+      <td><%= @user.soft_skill.dislike %></td>
+    </tr>
+    <tr>
+      <th>Greatest achievement:</th>
+      <td><%= @user.soft_skill.greatest_achievement %></td>
+    </tr>
+    <tr>
+      <th>Best friend:</th>
+      <td><%= @user.soft_skill.best_friend %></td>
+    </tr>
+    <tr>
+      <th>Greatest regret:</th>
+      <td><%= @user.soft_skill.greatest_regret %></td>
+    </tr>
+    <tr>
+      <th>Motto:</th>
+      <td><%= @user.soft_skill.motto %></td>
+    </tr>
+    <tr>
+      <th>Links to share:</th>
+      <td><%= @user.soft_skill.links_to_share %></td>
+    </tr>
+    <tr>
+      <th>More about:</th>
+      <td><%= @user.soft_skill.more_about %></td>
+    </tr>
+  </tbody>
+</table>
+<% if current_user && (current_user.id == @user.id) %>
+  <%= link_to 'Edit Soft Skills', edit_user_soft_skill_path(@user.id, @user.soft_skill.id) %>
+<% end %>
+<% else %>
+  <% if current_user && (current_user.id == @user.id) %>
+    <%= link_to 'Create Soft Skills', new_user_soft_skill_path(@user.id) %>
+  <% else %>
+    <span>No soft skills available</span>
+  <% end %>
+<% end %>

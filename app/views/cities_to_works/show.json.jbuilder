@@ -1,1 +1,1 @@
-json.partial! "cities_to_works/cities_to_work", cities_to_work: @cities_to_work
+json.partial! "hard_skill", hard_skill: @hard_skill

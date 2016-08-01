@@ -1,22 +1,47 @@
-<%= form_for(cities_to_work) do |f| %>
-  <% if cities_to_work.errors.any? %>
+<%= form_for  [@user, @user.hard_skill], html: {multipart: true } do |f| %>
+  <% if @user.hard_skill.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(cities_to_work.errors.count, "error") %> prohibited this cities_to_work from being saved:</h2>
+      <h2><%= pluralize(@user.hard_skill.errors.count, "error") %> prohibited this hard_skill from being saved:</h2>
 
       <ul>
-      <% cities_to_work.errors.full_messages.each do |message| %>
+      <% @user.hard_skill.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :cities_to_works %>
-    <%= f.text_field :cities_to_works %>
+  <div class="form-group">
+    <%= f.label :image, 'I want to see a picture that defines you...'%>
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :travelamount, 'What is the Airport Code of the airport you land the most often? ' %>
+    <%= f.text_field :travelamount, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :linkedin, 'Show me your Linkedin profile...'%>
+    <%= f.text_field :linkedin, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :social_media_profile, 'Please show me your favorite social media profile of yourself...' %>
+    <%= f.text_field :social_media_profile, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :website, 'Show me your Website/ Portfolio...'%>
+    <%= f.text_field :website, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :travelamount, 'What is the Airport Code of the airport you land the most often? ' %>
+    <%= f.text_field :travelamount, :class => "form-control" %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Save", :class => "btn btn-primary" %>
   </div>
 <% end %>

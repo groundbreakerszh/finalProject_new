@@ -11,77 +11,77 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :image, 'Share a picture of something that inspires you...' %>
     <%= f.file_field :image %>
   </div>
 
-  <div class="field">
-    <%= f.label :career, 'In which citys would you love to work?' %>
-    <%= f.text_field :career %>
+  <div class="form-group">
+    <%= f.label :career, 'In which citys would you like to work?' %>
+    <%= f.text_field :career, :class => "form-control" %>
   </div>
 
-  <div class="field">
-    <%= f.label :importance, 'What are the fields you want to do projects in?' %>
-    <%= f.text_field :importance %>
+  <div class="form-group">
+    <%= f.label :importance, 'What are the fields you want to do projects in? ' %>
+    <%= f.text_field :importance, :class => "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :impact, 'What is the impact do you want to generate with your profession?' %>
-    <%= f.text_field :impact %>
+    <%= f.text_field :impact, :class => "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :super_power, 'What is your one superpower?'%>
-    <%= f.text_field :super_power %>
+    <%= f.text_field :super_power, :class => "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :help, 'In which situations do you need help at?' %>
-    <%= f.text_field :help %>
+    <%= f.text_field :help, :class => "form-control" %>
   </div>
 
-  <div class="field">
-    <%= f.label :like, 'What is the most important to you?' %>
-    <%= f.text_field :like %>
+  <div class="form-group">
+    <%= f.label :like, 'What is the qualities you most like in a person?' %>
+    <%= f.text_field :like, :class => "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :dislike, 'What is it that you most dislike in a person?' %>
-    <%= f.text_field :dislike %>
+    <%= f.text_field :dislike, :class => "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :greatest_achievement, 'What do you consider your greatest achievement?' %>
-    <%= f.text_field :greatest_achievement %>
+    <%= f.text_field :greatest_achievement, :class => "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :best_friend, 'What says your best friend about you?' %>
-    <%= f.text_field :best_friend %>
+    <%= f.text_field :best_friend, :class => "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :greatest_regret, 'What is your greatest regret?' %>
-    <%= f.text_field :greatest_regret %>
+    <%= f.text_field :greatest_regret, :class => "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :motto, 'What is your motto?'%>
-    <%= f.text_field :motto %>
+    <%= f.text_field :motto, :class => "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :links_to_share, 'What links would you love to share with me?' %>
-    <%= f.text_field :links_to_share %>
+    <%= f.text_field :links_to_share, :class => "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :more_about, 'Tell me something about you what you usually never tell someone you recently met...'%>
-    <%= f.text_field :more_about %>
+    <%= f.text_field :more_about, :class => "form-control" %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Save", :class => "btn btn-primary" %>
   </div>
 <% end %>

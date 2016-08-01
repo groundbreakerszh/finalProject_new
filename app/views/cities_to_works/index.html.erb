@@ -1,27 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Cities To Works</h1>
+<h1>Hard Skills</h1>
 
 <table>
   <thead>
     <tr>
-      <th>City</th>
+      <th>Linkedin</th>
+      <th>Social_media_profile</th>
+      <th>Website</th>
+      <th>Travelamount</th>
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
-    <% @cities_to_works.each do |cities_to_work| %>
-      <tr>
-        <td><%= cities_to_work.city %></td>
-        <td><%= link_to 'Show', cities_to_work %></td>
-        <td><%= link_to 'Edit', edit_cities_to_work_path(cities_to_work) %></td>
-        <td><%= link_to 'Destroy', cities_to_work, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    <tr>
+      <td><%= @user.hard_skill.linkedin %></td>
+      <td><%= @user.hard_skill.social_media_profile %></td>
+      <td><%= @user.hard_skill.website %></td>
+      <td><%= @user.hard_skill.travelamount %></td>
+      <td><%= link_to 'Show', user_hard_skills_path %></td>
+      <td><%= link_to 'Edit', edit_user_hard_skill_path(@user.id, @user.hard_skill.id) %></td>
+    </tr>
+    <%= link_to 'New Hard Skill', new_user_hard_skill_path(@user) %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Cities To Work', new_cities_to_work_path %>

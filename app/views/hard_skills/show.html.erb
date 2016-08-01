@@ -1,26 +1,33 @@
-<p id="notice"><%= notice %></p>
+<h1>Hard Skills</h1>
 
-
-
-<p>
-  <strong>Linkedin:</strong>
-  <%= @hard_skill.linkedin %>
-</p>
-
-<p>
-  <strong>Social_media_profile:</strong>
-  <%= @hard_skill.social_media_profile %>
-</p>
-
-<p>
-  <strong>Website:</strong>
-  <%= @hard_skill.website %>
-</p>
-
-<p>
-  <strong>Travelamount:</strong>
-  <%= @hard_skill.travelamount %>
-</p>
-
-<%= link_to 'Edit', edit_hard_skill_path(@hard_skill) %> |
-<%= link_to 'Back', hard_skills_path %>
+<% if @user.hard_skill %>
+<table class="table table-hover">
+  <tbody>
+    <tr>
+      <th>Linked In:</th>
+      <td><%= @user.hard_skill.linkedin %></td>
+    </tr>
+    <tr>
+      <th>Social Media:</th>
+      <td><%= @user.hard_skill.social_media_profile %></td>
+    </tr>
+    <tr>
+      <th>Website:</th>
+      <td><%= @user.hard_skill.website %></td>
+    </tr>
+    <tr>
+      <th>Travelamount:</th>
+      <td><%= @user.hard_skill.travelamount %></td>
+    </tr>
+  </tbody>
+</table>
+<% if current_user && (current_user.id == @user.id) %>
+  <%= link_to 'Edit Hard Skills', edit_user_hard_skill_path(@user.id, @user.hard_skill.id) %>
+<% end %>
+<% else %>
+  <% if current_user && (current_user.id == @user.id) %>
+    <%= link_to 'Create Hard Skills', new_user_hard_skill_path(@user.id) %>
+  <% else %>
+    <span>No hard skills available</span>
+  <% end %>
+<% end %>

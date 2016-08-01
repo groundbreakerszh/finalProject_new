@@ -27,6 +27,7 @@ class SiteController < ApplicationController
     if !@id.nil?
       # find user per id
       @user = User.find(@id)
+      @hard_skill = @user.hard_skill
     end
   end
 end
