@@ -1,4 +1,3 @@
-
 <% if @user.soft_skill %>
 <table class="table table-hover">
   <tbody>
@@ -45,6 +44,7 @@
     <tr>
       <th>What is your motto?</th>
       <td><%= @user.soft_skill.motto %></td>
+      <%= image_tag @user.soft_skill.image.url(:large) %>
     </tr>
     <tr>
       <th>What links would you love to share with me?</th>
