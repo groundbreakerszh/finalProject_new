@@ -1,32 +1,32 @@
-<h1>Hard Skills</h1>
+<h1>ABOUT</h1>
 
 <% if @user.hard_skill %>
 <table class="table table-hover">
   <tbody>
     <tr>
-      <th>Linked In:</th>
+      <th>Show me your Linkedin profile...</th>
       <td><%= @user.hard_skill.linkedin %></td>
     </tr>
     <tr>
-      <th>Social Media:</th>
+      <th>Please show me your favorite social media profile of yourself...</th>
       <td><%= @user.hard_skill.social_media_profile %></td>
     </tr>
     <tr>
-      <th>Website:</th>
+      <th>Show me your Website/ Portfolio...</th>
       <td><%= @user.hard_skill.website %></td>
     </tr>
     <tr>
-      <th>Travelamount:</th>
+      <th>What is the Airport Code of the airport you land the most often?</th>
       <td><%= @user.hard_skill.travelamount %></td>
     </tr>
   </tbody>
 </table>
 <% if current_user && (current_user.id == @user.id) %>
-  <%= link_to 'Edit Hard Skills', edit_user_hard_skill_path(@user.id, @user.hard_skill.id) %>
+  <%= link_to 'Edit', edit_user_hard_skill_path(@user.id, @user.hard_skill.id) %>
 <% end %>
 <% else %>
   <% if current_user && (current_user.id == @user.id) %>
-    <%= link_to 'Create Hard Skills', new_user_hard_skill_path(@user.id) %>
+    <%= link_to 'Create', new_user_hard_skill_path(@user.id) %>
   <% else %>
     <span>No hard skills available</span>
   <% end %>
