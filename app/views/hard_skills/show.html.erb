@@ -1,8 +1,9 @@
 <h1>ABOUT</h1>
 
-<%= image_tag @user.hard_skill.image.url(:large) %>
 
 <% if @user.hard_skill %>
+<%= image_tag @user.hard_skill.image.url(:large) %>
+
 <table class="table table-hover">
   <tbody>
     <tr>

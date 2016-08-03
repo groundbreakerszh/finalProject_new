@@ -4,7 +4,7 @@
 # Examples:
 
 
-michael = User.create(name: "Michael Hartl", email: "michael.hartl@example.com", password: "123456", password_confirmation: "123456")
+michael = User.create(name: "Elon Musk", email: "elon.musk@spacex.com", password: "123456", password_confirmation: "123456")
 # michael.create_hard_skill(linkedin: "https://www.linkedin.com/", social_media_profile: "https://www.facebook.com", website: "http://www.google.com")
 
 
