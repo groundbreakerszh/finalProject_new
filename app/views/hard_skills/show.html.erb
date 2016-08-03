@@ -29,7 +29,7 @@
 <% end %>
 <% else %>
   <% if current_user && (current_user.id == @user.id) %>
-    <%= link_to 'Create', new_user_hard_skill_path(@user.id) %>
+    <%= link_to 'Tell me something about you....', new_user_hard_skill_path(@user.id) %>
   <% else %>
     <span>No hard skills available</span>
   <% end %>

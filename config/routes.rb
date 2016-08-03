@@ -11,7 +11,7 @@ Rails.application.routes.draw do
    resources :cities_to_works
    resources :travel_amounts
 
-  get 'users/new'
+  #get 'users/new'
 
   get 'sessions/new'
 

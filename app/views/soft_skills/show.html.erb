@@ -61,7 +61,7 @@
 <% end %>
 <% else %>
   <% if current_user && (current_user.id == @user.id) %>
-    <%= link_to 'Create', new_user_soft_skill_path(@user.id) %>
+    <%= link_to 'Tell me more about you....', new_user_soft_skill_path(@user.id) %>
   <% else %>
     <span>No soft skills available</span>
   <% end %>
