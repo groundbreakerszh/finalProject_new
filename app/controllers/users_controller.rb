@@ -8,6 +8,10 @@ class UsersController < ApplicationController
   end
 
   def show
+    unless user_signed_in?
+      redirect_to root_path and return
+    end
+
     @hard_skills = HardSkill.where(user_id: current_user.id )
     @soft_skills = SoftSkill.where(user_id: current_user.id )
   end

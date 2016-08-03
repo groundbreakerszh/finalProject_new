@@ -1,6 +1,12 @@
-<div class="background_image">
+<div class="video-background">
+  <div class="home_title">
     <h1 class="background_image__title">DOTS</h1>
     <h3 class="background_image__subtitle">A social collective for <br>Entrepreneurs</h3>
+  </div>
+
+    <video autoplay loop muted>
+      <source src="<%= video_path 'sanfrancisco.mp4' %>" type="video/mp4">
+    </video>
 </div>
 
   <div class="row">
@@ -9,10 +15,18 @@
         <%= link_to controller: "site", action: "member", id: user.id do %>
         <div class="panel panel-default">
           <div class="panel-body text-center">
-            <img class="img image_profile" src="http://d22r54gnmuhwmk.cloudfront.net/app-assets/global/default_user_icon-7a95ec473c1c41f6d020d32c0504a0ef.jpg">
+            <% if user.hard_skill.image? %>
+              <%= image_tag user.hard_skill.image.url(:large), class: 'img image_profile' %>
+            <% else %>
+              <img class="img image_profile" src="http://d22r54gnmuhwmk.cloudfront.net/app-assets/global/default_user_icon-7a95ec473c1c41f6d020d32c0504a0ef.jpg">
+            <% end %>
           </div>
           <div class="panel-footer text-center">
-            <h3><%= user.name %></h3>
+            <h3>
+              <%= user.name %> |
+              <%= user.year_of_birth %> |
+              <%= user.hard_skill.travelamount %> |
+            </h3>
           </div>
         </div>
         <% end %>
