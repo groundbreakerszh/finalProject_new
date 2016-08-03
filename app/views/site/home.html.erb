@@ -15,8 +15,10 @@
         <%= link_to controller: "site", action: "member", id: user.id do %>
         <div class="panel panel-default">
           <div class="panel-body text-center">
-            <% if user.hard_skill.image? %>
-              <%= image_tag user.hard_skill.image.url(:large), class: 'img image_profile' %>
+            <% unless user.hard_skill == nil%>
+              <% unless user.hard_skill.image == nil%>
+                <%= image_tag user.hard_skill.image.url(:large), class: 'img image_profile' %>
+              <% end %>
             <% else %>
               <img class="img image_profile" src="http://d22r54gnmuhwmk.cloudfront.net/app-assets/global/default_user_icon-7a95ec473c1c41f6d020d32c0504a0ef.jpg">
             <% end %>
@@ -25,7 +27,9 @@
             <h3>
               <%= user.name %> |
               <%= user.year_of_birth %> |
-              <%= user.hard_skill.travelamount %> |
+              <% unless user.hard_skill == nil%>
+                <%= user.hard_skill.travelamount %> |
+              <% end %>
             </h3>
           </div>
         </div>
